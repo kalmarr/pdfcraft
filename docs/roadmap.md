@@ -30,6 +30,7 @@
 
 > **Last reviewed:** 2026-10-18 · **Last updated:** 2026-10-18 · **Change:** minor (M3, PR #3101: optional gapless page display with translations in all 22 catalogs; organizer and comparison toggles corrected; estimates unchanged)
 > **2026-10-18 update:** Hungarian desktop OCR implementation added; broader parity estimates unchanged.
+> **2026-10-19 update:** Hungarian OCR review fixes: localized installation notices and refreshed measured checklist counts; readiness and hour estimates unchanged.
 
 > **Last reviewed:** 2026-10-15 · **Last updated:** 2026-10-15 · **Change:** minor (M14/#2383 GPU-limit candidate; estimates unchanged) · **Target:** Adobe Acrobat Pro (Acrobat DC, continuous track 26.002.21931, macOS)
 > **Last reviewed:** 2026-10-20 - **Last updated:** 2026-10-20 - **Change:** minor (M6, #3502: form detection uses the existing content-stream boundary policy; estimates unchanged)

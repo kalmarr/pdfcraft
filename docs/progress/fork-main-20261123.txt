@@ -1,0 +1,30 @@
+Fork main integration
+Date: 2026-11-23
+
+Integrated the custom update source (PR #6123), Hungarian OCR (PR #3335)
+and native/WebAssembly lint fixes (PR #4672) into kalmarr/pdfcraft main.
+The feature branches already include the upstream baseline at 4f23ee1c1;
+the fork main update retains that history without rewriting it.
+
+The updater remains pinned to craft-libs commit
+05f939667e6965b6caf12c8b0e28ecf3cdfcffa0, which contains the repository-case
+fix from craft-libs PR #595. This commit is available to Cargo even while
+the upstream PR remains open. This fork integration does not claim
+that any of the upstream PRs have been merged.
+
+Validation on Linux with Rust 1.95:
+- Workspace formatting, locked Cargo metadata and shell syntax checks passed.
+- Native all-target Clippy passed for all eleven affected application/crate packages.
+- WASM Clippy passed for the ten affected library packages.
+- The prescribed xtask wasm gate passed for all 32 eligible workspace crates.
+- 113 OCR library tests, 7 updater-source tests, 6 real-binary/AppImage tests,
+  16 OCR UI tests, the OCR retry regression, 34 OCR editing tests and the
+  Hungarian automation regression passed.
+- The seven other affected libraries passed 2402 tests; two existing ignored
+  tests remained unrun. Total executed Cargo tests: 2580 passed, none failed.
+- xtask layers, assets and parity passed.
+
+An extra all-target WASM test-build probe failed because proptest's native
+wait-timeout helper has no WASM implementation. Production WASM Clippy and
+the repository's prescribed WASM gate passed; no test was removed or weakened.
+Windows and browser runtime tests were not run locally.

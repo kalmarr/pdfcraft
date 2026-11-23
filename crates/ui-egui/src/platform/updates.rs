@@ -19,6 +19,7 @@ pub const RELEASES_PAGE: &str = concat!("https://github.com/", env!("PDFCRAFT_UP
 #[cfg(not(target_arch = "wasm32"))]
 pub type UpdateSource = CheckSource;
 
+#[cfg_attr(target_arch = "wasm32", derive(Default))]
 pub(crate) struct Updates {
     #[cfg(not(target_arch = "wasm32"))]
     updater: Updater,
@@ -54,6 +55,7 @@ impl Updates {
     }
 }
 
+#[cfg(not(target_arch = "wasm32"))]
 impl Default for Updates {
     fn default() -> Self {
         Self {
